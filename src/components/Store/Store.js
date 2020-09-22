@@ -22,7 +22,7 @@ export default class Store extends Component {
       <div>
         <header>
           <span>Span</span>
-          <img alt="" />
+          <i className="fa fa-shopping-cart" />
         </header>
         <main>
           {this.state.classifies.map((classify, index) => (

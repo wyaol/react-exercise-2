@@ -1,0 +1,17 @@
+.goods {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.goods-list {
+  margin-top: 20px;
+}
+
+.good {
+  float: left;
+  padding-right: 20px;
+}
+
+.clear {
+  clear: both;
+}

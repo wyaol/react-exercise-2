@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Goods.css';
 import Good from '../Good/Good';
+import goodImg from '../../assets/product_image_placeholder.png';
 
 export default class Goods extends Component {
   constructor(props) {
@@ -9,17 +10,17 @@ export default class Goods extends Component {
       goods: [
         {
           name: 'iPhone11',
-          picture: 'xx',
+          picture: goodImg,
           price: 5999,
         },
         {
           name: 'iPhone11',
-          picture: 'xx',
+          picture: goodImg,
           price: 5999,
         },
         {
           name: 'iPhone11',
-          picture: 'xx',
+          picture: goodImg,
           price: 5999,
         },
       ],
@@ -28,16 +29,20 @@ export default class Goods extends Component {
 
   render() {
     return (
-      <div>
-        <span>{this.props.classify}</span>
-        {this.state.goods.map((good, index) => (
-          <Good
-            key={index}
-            name={good.name}
-            picture={good.picture}
-            price={good.price}
-          />
-        ))}
+      <div className="goods">
+        <h2>{this.props.classify}</h2>
+        <div className="goods-list">
+          {this.state.goods.map((good, index) => (
+            <Good
+              className="good"
+              key={index}
+              name={good.name}
+              picture={good.picture}
+              price={good.price}
+            />
+          ))}
+          <div className="clear"></div>
+        </div>
       </div>
     );
   }
