@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
+import Store from './components/Store/Store';
 
 class App extends Component {
   render() {
-    return (
-      <main className="app">
-      </main>
-    );
+    // return (
+    //   <main className="app">
+    //   </main>
+    // );
+    return <Store />;
   }
 }
 
