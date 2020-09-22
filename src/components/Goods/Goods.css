@@ -1,6 +1,10 @@
 .goods {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 26px;
+  margin-left: 21px;
+}
+
+.goods * {
+  font-weight: 800;
 }
 
 .goods-list {

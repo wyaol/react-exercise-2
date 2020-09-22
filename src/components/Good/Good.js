@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import './Good.css';
 
@@ -8,9 +9,13 @@ export default class Good extends Component {
         <h4>{this.props.name}</h4>
         <img src={this.props.picture} alt="" />
         <div className="price">
-          <span>￥{this.props.price}</span>
+          <span>{this.props.price}</span>
           <div className="button">
-            <button>add to cart</button>
+            <button
+              onClick={() => this.props.handleAddToCart(this.props.count)}
+            >
+              add to cart
+            </button>
           </div>
         </div>
       </div>
