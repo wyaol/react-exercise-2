@@ -13,36 +13,15 @@ export default class Store extends Component {
   componentDidMount() {
     axios.get('http://localhost:3000/products').then((response) => {
       const goods = response.data;
-      const res = {};
-      for (const goodIndex in goods) {
-        if (goods[goodIndex].category in res) {
-          res[goods[goodIndex].category].push({
-            name: goods[goodIndex].name,
-            price: goods[goodIndex].price,
-            picture: goodImg,
-          });
-        } else {
-          res[goods[goodIndex].category] = [
-            {
-              name: goods[goodIndex].name,
-              price: goods[goodIndex].price,
-              picture: goodImg,
-            },
-          ];
-        }
-      }
-
-      const temp = Object.keys(res);
-      const result = [];
-      temp.forEach((element) => {
-        result.push({
-          category: element,
-          goods: res[element],
-        });
+      const result = {};
+      goods.forEach((good) => {
+        good.picture = goodImg;
+        if (good.category in result) result[good.category].push(good);
+        else result[good.category] = [good];
       });
 
       this.setState({
-        classifies: result,
+        classifies: Object.entries(result),
       });
     });
   }
@@ -67,8 +46,8 @@ export default class Store extends Component {
           {this.state.classifies.map((classify, index) => (
             <Goods
               key={index}
-              classify={classify.category}
-              goods={classify.goods}
+              classify={classify[0]}
+              goods={classify[1]}
               handleAddToCart={this.handleAddToCart}
             />
           ))}
