@@ -1,8 +1,16 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 
 export default class Good extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    picture: PropTypes.string,
+    price: PropTypes.string,
+    name: PropTypes.string,
+    handleAddToCart: PropTypes.func,
+  };
+
   render() {
     const { className, picture, price, name, handleAddToCart } = this.props;
 
