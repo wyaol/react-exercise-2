@@ -4,10 +4,6 @@ import './Goods.css';
 import Good from '../Good/Good';
 
 export default class Goods extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="goods">
@@ -21,7 +17,6 @@ export default class Goods extends Component {
               picture={good.picture}
               price={good.price}
               handleAddToCart={this.props.handleAddToCart}
-              count={this.props.count}
             />
           ))}
           <div className="clear"></div>

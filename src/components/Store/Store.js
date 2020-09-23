@@ -5,18 +5,15 @@ import axios from 'axios';
 import goodImg from '../../assets/product_image_placeholder.png';
 
 export default class Store extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      classifies: [],
-      count: 0,
-    };
-  }
+  state = {
+    classifies: [],
+    count: 0,
+  };
 
   componentDidMount() {
     axios.get('http://localhost:3000/products').then((response) => {
       const goods = response.data;
-      let res = {};
+      const res = {};
       for (const goodIndex in goods) {
         if (goods[goodIndex].category in res) {
           res[goods[goodIndex].category].push({
@@ -36,7 +33,7 @@ export default class Store extends Component {
       }
 
       const temp = Object.keys(res);
-      let result = [];
+      const result = [];
       temp.forEach((element) => {
         result.push({
           category: element,
@@ -50,13 +47,11 @@ export default class Store extends Component {
     });
   }
 
-  handleAddToCart(that) {
-    // const that = this;
-    // console.log(that.state);
-    that.setState({
-      count: that.state.count + 1,
+  handleAddToCart = () => {
+    this.setState({
+      count: this.state.count + 1,
     });
-  }
+  };
 
   render() {
     return (
@@ -75,7 +70,6 @@ export default class Store extends Component {
               classify={classify.category}
               goods={classify.goods}
               handleAddToCart={this.handleAddToCart}
-              count={this}
             />
           ))}
         </main>

@@ -11,11 +11,7 @@ export default class Good extends Component {
         <div className="price">
           <span>{this.props.price}</span>
           <div className="button">
-            <button
-              onClick={() => this.props.handleAddToCart(this.props.count)}
-            >
-              add to cart
-            </button>
+            <button onClick={this.props.handleAddToCart}>add to cart</button>
           </div>
         </div>
       </div>
