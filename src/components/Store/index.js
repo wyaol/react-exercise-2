@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Store.css';
-import Goods from '../Goods/Goods';
+import './index.css';
+import Goods from '../Goods';
 import axios from 'axios';
 import goodImg from '../../assets/product_image_placeholder.png';
 

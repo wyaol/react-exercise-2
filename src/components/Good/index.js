@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import './Good.css';
+import './index.css';
 
 export default class Good extends Component {
   render() {
