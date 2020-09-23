@@ -5,11 +5,13 @@ import Good from '../Good/Good';
 
 export default class Goods extends Component {
   render() {
+    const { classify, goods } = this.props;
+
     return (
       <div className="goods">
-        <h2>{this.props.classify}</h2>
+        <h2>{classify}</h2>
         <div className="goods-list">
-          {this.props.goods.map((good, index) => (
+          {goods.map((good, index) => (
             <Good
               className="good"
               key={index}
